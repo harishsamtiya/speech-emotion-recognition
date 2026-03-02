@@ -1,0 +1,24 @@
+# ============================================
+# Speech Emotion Recognition Configuration
+# ============================================
+
+model:
+  pretrained_model: "facebook/wav2vec2-base"
+  num_labels: 7
+  max_audio_length: 160000
+  sampling_rate: 16000
+
+training:
+  epochs: 10
+  batch_size: 4
+  learning_rate: 0.00001
+  warmup_steps: 500
+  weight_decay: 0.01
+  test_size: 0.2
+  seed: 42
+  fp16: true
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+  max_audio_duration: 10
